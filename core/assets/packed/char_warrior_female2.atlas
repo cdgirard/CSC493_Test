@@ -1,0 +1,230 @@
+
+char_warrior_female2.png
+size: 560,280
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0000
+  rotate: false
+  xy: 0, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0001
+  rotate: false
+  xy: 70, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0002
+  rotate: false
+  xy: 140, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0003
+  rotate: false
+  xy: 210, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0004
+  rotate: false
+  xy: 280, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0005
+  rotate: false
+  xy: 350, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0006
+  rotate: false
+  xy: 420, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0007
+  rotate: false
+  xy: 490, 0
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0008
+  rotate: false
+  xy: 0, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0009
+  rotate: false
+  xy: 70, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0010
+  rotate: false
+  xy: 140, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0011
+  rotate: false
+  xy: 210, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0012
+  rotate: false
+  xy: 280, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0013
+  rotate: false
+  xy: 350, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0014
+  rotate: false
+  xy: 420, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0015
+  rotate: false
+  xy: 490, 70
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0016
+  rotate: false
+  xy: 0, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0017
+  rotate: false
+  xy: 70, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0018
+  rotate: false
+  xy: 140, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0019
+  rotate: false
+  xy: 210, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0020
+  rotate: false
+  xy: 280, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0021
+  rotate: false
+  xy: 350, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0022
+  rotate: false
+  xy: 420, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0023
+  rotate: false
+  xy: 490, 140
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0024
+  rotate: false
+  xy: 0, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0025
+  rotate: false
+  xy: 70, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0026
+  rotate: false
+  xy: 140, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0027
+  rotate: false
+  xy: 210, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0028
+  rotate: false
+  xy: 280, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0029
+  rotate: false
+  xy: 350, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0030
+  rotate: false
+  xy: 420, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+0031
+  rotate: false
+  xy: 490, 210
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
