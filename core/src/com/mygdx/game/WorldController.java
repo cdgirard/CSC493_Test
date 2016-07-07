@@ -1,7 +1,9 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -19,13 +21,16 @@ import com.mygdx.game.objects.Block;
 import com.mygdx.game.objects.Land;
 import com.mygdx.game.objects.Player;
 import com.mygdx.game.objects.Player.JUMP_STATE;
+import com.mygdx.game.screens.MenuScreen;
 import com.mygdx.game.util.CameraHelper;
 import com.mygdx.game.util.CollisionHandler;
 import com.mygdx.game.util.Constants;
 
-public class WorldController implements Disposable
+public class WorldController extends InputAdapter implements Disposable
 {
 	private static final String TAG = WorldController.class.getName();
+	
+	private Game game;
 	
 	public CameraHelper cameraHelper;
 	
@@ -42,8 +47,9 @@ public class WorldController implements Disposable
 	// Box2D Collisions
 	public World myWorld;
 	
-	public WorldController()
+	public WorldController(Game g)
 	{
+		game = g;
 		init();	
 	}
 	
@@ -52,6 +58,7 @@ public class WorldController implements Disposable
 		objectsToRemove = new Array<AbstractGameObject>();
 		lives = Constants.LIVES_START;
 		cameraHelper = new CameraHelper();
+		Gdx.input.setInputProcessor(this);
 		initLevel();
 	}
 	
@@ -112,7 +119,18 @@ public class WorldController implements Disposable
 		polygonShape.dispose();
 	}
 	
+	private void backToMenu()
+	{
+		game.setScreen(new MenuScreen(game));
+	}
 
+	@Override
+	public boolean keyUp(int keycode)
+	{
+		if (keycode == Keys.ESCAPE)
+			backToMenu();
+		return false;
+	}
 	
 	private void handleInputGame(float deltaTime)
 	{

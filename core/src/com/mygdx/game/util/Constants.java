@@ -15,7 +15,7 @@ public class Constants
 	public static final float VIEWPORT_GUI_HEIGHT = 480.0f;
 	
 	// Image Assets
-	public static final String TEXTURE_ATLAS_PLAYER = "packed/char_warrior_female2.atlas";
+	public static final String TEXTURE_ATLAS_PLAYER = "images/char_warrior_female2.atlas";
 	public static final String TEXTURE_BLOCK = "images/arrow_down.png";
 	public static final String TEXTURE_LAND = "images/ground.png";
 
@@ -27,4 +27,11 @@ public class Constants
 	public static final String LEVEL_01 = "data/test_level.png";
 	
 	public static final int LIVES_START = 3;
+	public static final String PREFERENCES = "game.prefs";
+	
+	// UI Data
+	public static final String TEXTURE_ATLAS_UI = "ui/game-ui-pack.atlas";
+	public static final String TEXTURE_ATLAS_LIBGDX_UI = "ui/uiskin.atlas";
+	public static final String SKIN_LIBGDX_UI = "ui/uiskin.json";
+	public static final String SKIN_GAME_UI = "ui/game-ui.json";
 }
