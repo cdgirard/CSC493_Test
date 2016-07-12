@@ -85,7 +85,7 @@ public class MenuScreen extends AbstractGameScreen
 		stack.add(layerObjects);
 		stack.add(layerLogos);
 		stack.add(layerControls);
-		stack.addActor(layerOptionsWindow);
+		stage.addActor(layerOptionsWindow);
 	}
 	
 	private Table buildBackgroundLayer()
@@ -158,11 +158,10 @@ public class MenuScreen extends AbstractGameScreen
 		winOptions.setVisible(false);
 		if (debugEnabled)
 			winOptions.debug();
-		Gdx.app.debug(TAG, "width-pre pack: "+winOptions.getWidth());
 		winOptions.pack();
-		Gdx.app.debug(TAG, "width: "+winOptions.getWidth());
 		// Not doing anything
-		winOptions.setPosition(Constants.VIEWPORT_GUI_WIDTH-400 - 50, 50);
+		winOptions.setPosition(Constants.VIEWPORT_GUI_WIDTH- winOptions.getWidth() - 50, 50);
+		winOptions.setMovable(false);
 		return winOptions;
 	}
 	
@@ -324,7 +323,7 @@ public class MenuScreen extends AbstractGameScreen
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		stage.act(deltaTime);
 		stage.draw();
-		stage.setDebugAll(true);
+		//stage.setDebugAll(true);
 
 	}
 	
