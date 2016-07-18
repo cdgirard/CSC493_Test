@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.mygdx.game.asset.AssetBlock;
 import com.mygdx.game.asset.AssetPlayerAnimation;
+import com.mygdx.game.asset.Assets;
+import com.mygdx.game.util.AudioManager;
 
 public class Player extends AbstractGameObject 
 {
@@ -64,6 +66,7 @@ public class Player extends AbstractGameObject
 			case GROUNDED: 
 				if (jumpKeyPressed)
 				{
+					AudioManager.instance.play(Assets.instance.sounds.jump);
 					timeJumping = 0;
 					jumpState = JUMP_STATE.JUMP_RISING;
 					//Gdx.app.log(TAG,"RISING");

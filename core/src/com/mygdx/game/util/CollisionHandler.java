@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.mygdx.game.WorldController;
+import com.mygdx.game.asset.Assets;
 import com.mygdx.game.objects.AbstractGameObject;
 import com.mygdx.game.objects.Block;
 import com.mygdx.game.objects.Land;
@@ -143,6 +144,7 @@ public class CollisionHandler implements ContactListener
     	{
     		// Remove the block update the player's score by 1.
     		world.score++;
+    		AudioManager.instance.play(Assets.instance.sounds.pickupCoin);
     		
     		Block block = (Block)objFixture.getBody().getUserData();
     		world.flagForRemoval(block);

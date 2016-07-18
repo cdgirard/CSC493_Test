@@ -8,6 +8,8 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.mygdx.game.asset.Assets;
 import com.mygdx.game.screens.MenuScreen;
+import com.mygdx.game.util.AudioManager;
+import com.mygdx.game.util.GamePreferences;
 
 public class MyGdxGame extends Game 
 {
@@ -21,6 +23,10 @@ public class MyGdxGame extends Game
 	{
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 		Assets.instance.init(new AssetManager());
+		
+		GamePreferences.instance.load();
+		AudioManager.instance.play(Assets.instance.music.song01);
+		
 		setScreen(new MenuScreen(this));
 		
 	}

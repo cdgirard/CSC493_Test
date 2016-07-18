@@ -22,6 +22,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.mygdx.game.asset.Assets;
+import com.mygdx.game.util.AudioManager;
 import com.mygdx.game.util.CharacterSkin;
 import com.mygdx.game.util.Constants;
 import com.mygdx.game.util.GamePreferences;
@@ -289,6 +290,7 @@ public class MenuScreen extends AbstractGameScreen
 		btnMenuPlay.setVisible(true);
 		btnMenuOptions.setVisible(true);
 		winOptions.setVisible(false);
+		AudioManager.instance.onSettingsUpdated(); // Not sure why we need it here....
 	}
 	
 	private void onCharSkinSelected(int index)
@@ -314,6 +316,7 @@ public class MenuScreen extends AbstractGameScreen
 	{
 		saveSettings();
 		onCancelClicked();
+		AudioManager.instance.onSettingsUpdated();
 	}
 
 	@Override
