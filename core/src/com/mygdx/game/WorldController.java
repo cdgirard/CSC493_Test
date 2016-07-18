@@ -80,15 +80,16 @@ public class WorldController extends InputAdapter implements Disposable
 		for (Land l : level.land)
 		{
 			BodyDef bodyDef = new BodyDef();
-			bodyDef.type = BodyType.KinematicBody;
 			bodyDef.position.set(l.position);
+			bodyDef.type = BodyType.KinematicBody;
 			Body body = myWorld.createBody(bodyDef);
+			//body.setType(BodyType.DynamicBody);
 			body.setUserData(l);
 			l.body = body;
 			PolygonShape polygonShape = new PolygonShape();
 			origin.x = l.bounds.width / 2.0f;
 			origin.y = l.bounds.height / 2.0f;
-			polygonShape.setAsBox(l.bounds.width / 2.0f, l.bounds.height / 2.0f, origin, 0);
+			polygonShape.setAsBox(l.bounds.width / 2.0f, (l.bounds.height-0.04f) / 2.0f, origin, 0);
 			FixtureDef fixtureDef = new FixtureDef();
 			fixtureDef.shape = polygonShape;
 			body.createFixture(fixtureDef);
@@ -108,9 +109,9 @@ public class WorldController extends InputAdapter implements Disposable
 		player.body = body;
 		
 		PolygonShape polygonShape = new PolygonShape();
-		origin.x = player.bounds.width / 2.0f;
-		origin.y = player.bounds.height / 2.0f;
-		polygonShape.setAsBox(player.bounds.width / 2.0f, player.bounds.height / 2.0f, origin, 0);
+		origin.x = (player.bounds.width) / 2.0f;
+		origin.y = (player.bounds.height) / 2.0f;
+		polygonShape.setAsBox((player.bounds.width-0.7f) / 2.0f, (player.bounds.height-0.15f) / 2.0f, origin, 0);
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = polygonShape;

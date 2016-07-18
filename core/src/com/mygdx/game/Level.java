@@ -74,11 +74,18 @@ public class Level
 				}
 				else if (BLOCK_TYPE.LAND.sameColor(currentPixel))
 				{
-					obj = new Land();
-					float heightIncreaseFactor = 1.0f;
-					offsetHeight = -3.0f;
-					obj.position.set(pixelX, baseHeight*obj.dimension.y*heightIncreaseFactor+offsetHeight);
-					land.add((Land)obj);
+					if (lastPixel != currentPixel)
+					{
+						obj = new Land();
+						float heightIncreaseFactor = 1.0f;
+						offsetHeight = -3.0f;
+						obj.position.set(pixelX, baseHeight * obj.dimension.y * heightIncreaseFactor + offsetHeight);
+						land.add((Land) obj);
+					}
+					else
+					{
+						land.get(land.size - 1).increaseLength(1);
+					}
 				}
 				else if (BLOCK_TYPE.PLAYER_SPAWNPOINT.sameColor(currentPixel))
 				{
@@ -123,9 +130,10 @@ public class Level
 	
 	public void update(float deltaTime)
 	{
-		
-		
 		player.update(deltaTime);
+		
+		for (Land l: land)
+			l.update(deltaTime);
 		
 		for (Block block: blocks)
 			block.update(deltaTime);

@@ -1,12 +1,15 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.mygdx.game.asset.Assets;
 import com.mygdx.game.util.Constants;
+import com.mygdx.game.util.GamePreferences;
 
 public class WorldRenderer implements Disposable
 {
@@ -18,7 +21,7 @@ public class WorldRenderer implements Disposable
 	private WorldController worldController;
 	
 	// For Box2D Debugging
-	private static final boolean DEBUG_DRAW_BOX2D_WORLD = false;
+	private static final boolean DEBUG_DRAW_BOX2D_WORLD = true;
 	private Box2DDebugRenderer b2DebugRenderer;
 	
 	public WorldRenderer (WorldController worldController)
@@ -66,7 +69,25 @@ public class WorldRenderer implements Disposable
 		batch.setProjectionMatrix(cameraUI.combined);
 		batch.begin();
 		renderGuiScore(batch);
+		if (GamePreferences.instance.showFpsCounter)
+			renderGuiFpsCounter(batch);
 		batch.end();
+	}
+	
+	private void renderGuiFpsCounter(SpriteBatch batch)
+	{
+		float x = cameraUI.viewportWidth - 55;
+		float y = cameraUI.viewportHeight - 15;
+		int fps = Gdx.graphics.getFramesPerSecond();
+		BitmapFont fpsFont = Assets.instance.fonts.defaultNormal;
+		if (fps >= 45)
+			fpsFont.setColor(0, 1, 0, 1);
+		else if (fps >= 30)
+			fpsFont.setColor(1, 1, 0, 1);
+		else
+			fpsFont.setColor(1, 0, 0, 1);
+		fpsFont.draw(batch, "FPS: "+fps, x, y);
+		fpsFont.setColor(1, 1, 1, 1);
 	}
 	
 	private void renderGuiScore(SpriteBatch batch)

@@ -38,7 +38,9 @@ public class CollisionHandler implements ContactListener
         Fixture fixtureA = contact.getFixtureA();
         Fixture fixtureB = contact.getFixtureB();
         
-        processContact(contact);
+        //Gdx.app.log("CollisionHandler-begin A", "begin");
+        
+       // processContact(contact);
         
         ContactListener listener = getListener(fixtureA.getFilterData().categoryBits, fixtureB.getFilterData().categoryBits);
         if (listener != null)
@@ -53,6 +55,7 @@ public class CollisionHandler implements ContactListener
         Fixture fixtureA = contact.getFixtureA();
         Fixture fixtureB = contact.getFixtureB();
         
+       // Gdx.app.log("CollisionHandler-end A", "end");
         processContact(contact);
         
         // Gdx.app.log("CollisionHandler-end A", fixtureA.getBody().getLinearVelocity().x+" : "+fixtureA.getBody().getLinearVelocity().y);

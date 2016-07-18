@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.mygdx.game.WorldController;
 import com.mygdx.game.WorldRenderer;
+import com.mygdx.game.util.GamePreferences;
 
 public class GameScreen extends AbstractGameScreen
 {
@@ -39,6 +40,7 @@ public class GameScreen extends AbstractGameScreen
 	@Override
 	public void show()
 	{
+		GamePreferences.instance.load();
 		worldController = new WorldController(game);
 		worldRenderer = new WorldRenderer(worldController);
 		Gdx.input.setCatchBackKey(true);

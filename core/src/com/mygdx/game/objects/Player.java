@@ -1,6 +1,7 @@
 package com.mygdx.game.objects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
@@ -10,6 +11,8 @@ import com.mygdx.game.asset.AssetPlayerAnimation;
 public class Player extends AbstractGameObject 
 {
 	public static final String TAG = Player.class.getName();
+	
+	public ParticleEffect dustParticles = new ParticleEffect();
 	
 	private final float JUMP_TIME_MAX = 0.3f;
 	private final float JUMP_TIME_MIN = 0.1f;
@@ -49,6 +52,9 @@ public class Player extends AbstractGameObject
 		timeJumping = 0;
 		hasPowerup = false;
 		timeLeftPowerup = 0;
+		
+		// Particles
+		dustParticles.load(Gdx.files.internal("effects/dust.pfx"), Gdx.files.internal("effects"));
 	}
 	
 	public void setJumping(boolean jumpKeyPressed)
@@ -61,6 +67,16 @@ public class Player extends AbstractGameObject
 					timeJumping = 0;
 					jumpState = JUMP_STATE.JUMP_RISING;
 					//Gdx.app.log(TAG,"RISING");
+				}
+				else if (velocity.x != 0)
+				{
+					//Gdx.app.log(TAG, "starting particles");
+					dustParticles.setPosition(position.x + dimension.x / 2, position.y+0.1f);
+					dustParticles.start();
+				}
+				else if (velocity.x == 0)
+				{
+					dustParticles.allowCompletion();
 				}
 				break;
 			case JUMP_RISING:
@@ -109,6 +125,8 @@ public class Player extends AbstractGameObject
 		}
 		if (jumpState != JUMP_STATE.GROUNDED)
 		{
+			//Gdx.app.log(TAG, "stopping particles");
+			dustParticles.allowCompletion();
 			super.updateMotionY(deltaTime);
 		}
     }
@@ -129,16 +147,21 @@ public class Player extends AbstractGameObject
 		{
 			viewDirection = velocity.x < 0 ? VIEW_DIRECTION.LEFT : VIEW_DIRECTION.RIGHT;
 		}
+		dustParticles.update(deltaTime);
 	}
 	
 	@Override
 	public void render(SpriteBatch batch) 
 	{
+		dustParticles.draw(batch);
+		
 		TextureRegion reg = player;
 		batch.draw(reg.getTexture(), position.x, position.y, origin.x, origin.y, dimension.x, dimension.y, 
 				scale.x, scale.y, rotation, reg.getRegionX(), reg.getRegionY(), reg.getRegionWidth(), reg.getRegionHeight(),
 				viewDirection == VIEW_DIRECTION.LEFT, false);
         batch.setColor(1, 1, 1, 1);
+        
+        
 	}
 
 }

@@ -21,14 +21,17 @@ public class Block extends AbstractGameObject
 		
 		bounds.set(0, 0, dimension.x, dimension.y);
 		origin.set(dimension.x / 2, dimension.y / 2);
+
 	}
+	
+
 
 	@Override
 	public void render(SpriteBatch batch) 
 	{
 		batch.draw(block.getTexture(), position.x-origin.x, position.y-origin.y, origin.x, origin.y, 
 				dimension.x, dimension.y, scale.x, scale.y, rotation, block.getRegionX(), 
-				block.getRegionY(), block.getRegionWidth(), block.getRegionHeight(), false, false);
+				block.getRegionY(), block.getRegionWidth(), block.getRegionHeight(), false, false);	
 	}
 
 }
