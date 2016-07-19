@@ -15,7 +15,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
-import com.mygdx.game.asset.AssetPlayerAnimation;
+import com.mygdx.game.asset.AssetPlayer;
 import com.mygdx.game.objects.AbstractGameObject;
 import com.mygdx.game.objects.Block;
 import com.mygdx.game.objects.Land;

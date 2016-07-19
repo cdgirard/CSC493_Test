@@ -4,227 +4,227 @@ size: 560,280
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-0000
+player
   rotate: false
   xy: 0, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0001
+  index: 0
+player
   rotate: false
   xy: 70, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0002
+  index: 1
+player
   rotate: false
   xy: 140, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0003
+  index: 2
+player
   rotate: false
   xy: 210, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0004
+  index: 3
+player
   rotate: false
   xy: 280, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0005
+  index: 4
+player
   rotate: false
   xy: 350, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0006
+  index: -5
+player
   rotate: false
   xy: 420, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0007
+  index: 6
+player
   rotate: false
   xy: 490, 0
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0008
+  index: 7
+player
   rotate: false
   xy: 0, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0009
+  index: 8
+player
   rotate: false
   xy: 70, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0010
+  index: 9
+player
   rotate: false
   xy: 140, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0011
+  index: 10
+player
   rotate: false
   xy: 210, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0012
+  index: 11
+player
   rotate: false
   xy: 280, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0013
+  index: 12
+player
   rotate: false
   xy: 350, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0014
+  index: 13
+player
   rotate: false
   xy: 420, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0015
+  index: 14
+player
   rotate: false
   xy: 490, 70
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0016
+  index: 15
+player
   rotate: false
   xy: 0, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0017
+  index: 16
+player
   rotate: false
   xy: 70, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0018
+  index: 17
+player
   rotate: false
   xy: 140, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0019
+  index: 18
+player
   rotate: false
   xy: 210, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0020
+  index: 19
+player
   rotate: false
   xy: 280, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0021
+  index: 20
+player
   rotate: false
   xy: 350, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0022
+  index: 21
+player
   rotate: false
   xy: 420, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0023
+  index: 22
+player
   rotate: false
   xy: 490, 140
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0024
+  index: 23
+player
   rotate: false
   xy: 0, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0025
+  index: 24
+player
   rotate: false
   xy: 70, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0026
+  index: 25
+player
   rotate: false
   xy: 140, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0027
+  index: 26
+player
   rotate: false
   xy: 210, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0028
+  index: 27
+player
   rotate: false
   xy: 280, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0029
+  index: 28
+player
   rotate: false
   xy: 350, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0030
+  index: 29
+player
   rotate: false
   xy: 420, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
-0031
+  index: 30
+player
   rotate: false
   xy: 490, 210
   size: 70, 70
   orig: 70, 70
   offset: 0, 0
-  index: -1
+  index: 31

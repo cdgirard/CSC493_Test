@@ -16,7 +16,7 @@ public class Assets implements Disposable, AssetErrorListener
 
 	public static final String TAG = Assets.class.getName();
 	public static final Assets instance = new Assets();
-	public AssetPlayerAnimation player;
+	public AssetPlayer player;
 	public AssetBlock block;
 	public AssetLand land;
 	public AssetFonts fonts;
@@ -54,9 +54,10 @@ public class Assets implements Disposable, AssetErrorListener
 			Gdx.app.debug(TAG, "asset: "+a);
 		
 		fonts = new AssetFonts();
+		// Animation: Player
 		
 		TextureAtlas atlas = assetManager.get(Constants.TEXTURE_ATLAS_PLAYER);
-		player = new AssetPlayerAnimation(atlas);
+		player = new AssetPlayer(atlas);
 		
 		Texture tex = assetManager.get(Constants.TEXTURE_BLOCK);
         block = new AssetBlock(tex);

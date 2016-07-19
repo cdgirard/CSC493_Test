@@ -1,12 +1,13 @@
 package com.mygdx.game.objects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.mygdx.game.asset.AssetBlock;
-import com.mygdx.game.asset.AssetPlayerAnimation;
+import com.mygdx.game.asset.AssetPlayer;
 import com.mygdx.game.asset.Assets;
 import com.mygdx.game.util.AudioManager;
 
@@ -27,13 +28,15 @@ public class Player extends AbstractGameObject
 		GROUNDED, FALLING, JUMP_RISING, JUMP_FALLING
 	}
 	
-	private TextureRegion player;
-	
 	public VIEW_DIRECTION viewDirection;
 	public float timeJumping;
 	public JUMP_STATE jumpState;
 	public boolean hasPowerup;
 	public float timeLeftPowerup;
+	
+	private Animation leftAnimation;
+	private Animation rightAnimation;
+	private Animation restingAnimation;
 	
 	public Player()
 	{
@@ -43,7 +46,12 @@ public class Player extends AbstractGameObject
 	public void init()
 	{
 		dimension.set(1,1);
-		player = AssetPlayerAnimation.leftChar[0];
+		
+		leftAnimation = Assets.instance.player.leftAnimation;
+		rightAnimation = Assets.instance.player.rightAnimation;
+		restingAnimation = Assets.instance.player.restingAnimation;
+		setAnimation(restingAnimation);
+		
 		origin.set(dimension.x/2,dimension.y/2);
 		bounds.set(0,0,dimension.x,dimension.y);
 		terminalVelocity.set(3.0f, 4.0f);
@@ -137,18 +145,38 @@ public class Player extends AbstractGameObject
 	@Override
 	public void update(float deltaTime)
 	{
+		stateTime += deltaTime;
+		//Gdx.app.log(TAG, "UP stateTime: "+stateTime);
 		updateMotionX(deltaTime);
 		updateMotionY(deltaTime);
 
 		if (body != null)
 		{
-			//Gdx.app.log(TAG, "velY: "+velocity.y+" state: "+jumpState);
-	        body.setLinearVelocity(velocity);		
+			// Gdx.app.log(TAG, "velY: "+velocity.y+" state: "+jumpState);
+			body.setLinearVelocity(velocity);
 			position.set(body.getPosition());
 		}
 		if (velocity.x != 0)
 		{
-			viewDirection = velocity.x < 0 ? VIEW_DIRECTION.LEFT : VIEW_DIRECTION.RIGHT;
+			//Gdx.app.log(TAG, "velX: "+velocity.x+" viewDir: "+viewDirection);
+			if (velocity.x < 0)
+			{
+				if (animation != leftAnimation)
+				{
+					setAnimation(leftAnimation);
+				}
+				viewDirection = VIEW_DIRECTION.LEFT;
+			}
+			else if (velocity.x > 0)
+			{
+				if (animation != rightAnimation)
+					setAnimation(rightAnimation);
+				viewDirection = VIEW_DIRECTION.RIGHT;
+			}
+		}
+		else
+		{
+			setAnimation(restingAnimation);
 		}
 		dustParticles.update(deltaTime);
 	}
@@ -158,10 +186,12 @@ public class Player extends AbstractGameObject
 	{
 		dustParticles.draw(batch);
 		
-		TextureRegion reg = player;
+		TextureRegion reg = animation.getKeyFrame(stateTime, true);
+		
+		// Gdx.app.log(TAG, "frame: "+reg.getRegionX()+ "state: " + stateTime+" animation: "+animation.getKeyFrames().length);
 		batch.draw(reg.getTexture(), position.x, position.y, origin.x, origin.y, dimension.x, dimension.y, 
 				scale.x, scale.y, rotation, reg.getRegionX(), reg.getRegionY(), reg.getRegionWidth(), reg.getRegionHeight(),
-				viewDirection == VIEW_DIRECTION.LEFT, false);
+				false, false);
         batch.setColor(1, 1, 1, 1);
         
         

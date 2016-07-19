@@ -1,5 +1,7 @@
 package com.mygdx.game.objects;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -24,6 +26,10 @@ public abstract class AbstractGameObject
 	
 	// Box2D Physics
 	public Body body;
+	
+	// Animation
+	public float stateTime;
+	public Animation animation;
 	
 	public AbstractGameObject()
 	{
@@ -79,6 +85,7 @@ public abstract class AbstractGameObject
 	// TODO: Should this method be made final so we can't override it?
 	public void update(float deltaTime)
 	{
+		stateTime += deltaTime;
 		if (body == null)
 		{
 			updateMotionX(deltaTime);
@@ -94,6 +101,11 @@ public abstract class AbstractGameObject
 		}
 	}
 	
+	public void setAnimation(Animation anim)
+	{
+		animation = anim;
+		stateTime = 0;
+	}
 	
 	public abstract void render(SpriteBatch batch);
 

@@ -63,8 +63,10 @@ public class AudioManager
 		{
 			if (!playingMusic.isPlaying())
 			    playingMusic.play();
-			else
-				playingMusic.pause();
+		}
+		else
+		{
+			playingMusic.pause();
 		}
 	}
 

@@ -35,7 +35,7 @@ public class Land extends AbstractGameObject
 		
 		floatingDownwards = false;
 		floatCycleTimeLeft = MathUtils.random(0, FLOAT_CYCLE_TIME / 2);
-		velocity.y = MathUtils.random(1, 5);
+		velocity.y = MathUtils.random(0.5f, 1.5f);
 	}
 	
 	public void setLength(int len)
@@ -54,7 +54,7 @@ public class Land extends AbstractGameObject
 	{
 		float relX = 0;
 		float relY = 0;
-		Gdx.app.log(TAG, ""+position.y);
+		//Gdx.app.log(TAG, ""+position.y);
 		// Center
 		relX = 0;
 		for (int i=0;i < length; i++)
